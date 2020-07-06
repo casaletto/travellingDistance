@@ -10,9 +10,15 @@ jobs:
     - name: msbuild
       uses: microsoft/setup-msbuild@v1.0.0
 
+    - name: environment 
+      run:  msbuild build.proj /t:Environment
+
+    - name: info 
+      run:  msbuild build.proj /t:BuildInfo
+
     - name: checkout 
       uses: actions/checkout@master 
 
     - name: compile 
-      run:  msbuild travellingDistance.sln "/t:Clean,Rebuild" "/p:Configuration=Debug" "/p:Platform=x64"
+      run:  msbuild travellingDistance.sln /t:Clean,Rebuild /p:Configuration=Debug /p:Platform=x64
 
