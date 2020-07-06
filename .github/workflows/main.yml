@@ -8,10 +8,10 @@ jobs:
 
     steps:
     - name: msbuild
-      uses: microsoft/setup-msbuild
+      uses: microsoft/setup-msbuild@v1.0.0
 
     - name: checkout 
-      uses: actions/checkout
+      uses: actions/checkout@V2 
 
     - name: compile 
       run: msbuild travellingDistance.sln "/t:Clean,Rebuild" "/p:Configuration=Debug" "/p:Platform=x64"
