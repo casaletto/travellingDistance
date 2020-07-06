@@ -17,7 +17,11 @@ jobs:
       uses: actions/checkout@master 
 
     - name: env
-      run:  get-childitem "ENV:"
+      run:  get-childitem "ENV:" | format-table -autoSize 
+
+    - name: env2
+      run:  set
+      shell: cmd
 
     - name: compile 
       run:  msbuild travellingDistance.sln /t:Clean,Rebuild /p:Configuration=Debug /p:Platform=x64
