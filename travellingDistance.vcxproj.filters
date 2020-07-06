@@ -31,6 +31,5 @@
     <None Include="README.md" />
     <None Include=".editorconfig" />
     <None Include=".github\workflows\main.yml" />
-    <None Include="build.proj" />
   </ItemGroup>
 </Project>

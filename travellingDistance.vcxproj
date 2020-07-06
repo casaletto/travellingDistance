@@ -172,7 +172,6 @@
   <ItemGroup>
     <None Include=".editorconfig" />
     <None Include=".github\workflows\main.yml" />
-    <None Include="build.proj" />
     <None Include="README.md" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

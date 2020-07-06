@@ -9,6 +9,7 @@ using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 #include <vector>
 #include <iterator>
 #include <algorithm>
+#include <filesystem>
 #include "program.h"
 
 namespace travellingDistance
@@ -44,6 +45,13 @@ namespace travellingDistance
 		}
 
 	public:	
+
+        TEST_METHOD( pwd )
+        {
+            auto path = std::filesystem::current_path() ;
+
+            Logger::WriteMessage( path.c_str() ) ;
+        }
 
 		TEST_METHOD( helloWorldTest )
 		{
