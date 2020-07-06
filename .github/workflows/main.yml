@@ -6,26 +6,26 @@ jobs:
     build:
         runs-on: windows-latest
 
-    steps:
-    - name: msbuild setup
-      uses: microsoft/setup-msbuild@v1.0.0
+        steps:
+        - name: msbuild setup
+          uses: microsoft/setup-msbuild@v1.0.0
 
-    - name: vstest setup
-      uses: darenm/Setup-VSTest@v1
+        - name: vstest setup
+          uses: darenm/Setup-VSTest@v1
 
-    - name: checkout 
-      uses: actions/checkout@master 
+        - name: checkout 
+          uses: actions/checkout@master 
 
-    - name: env
-      run:  set
-      shell: cmd
+        - name: env
+          run:  set
+          shell: cmd
 
-    - name: dir
-      run:  get-childitem
+        - name: dir
+          run:  get-childitem
 
-    - name: compile 
-      run:  msbuild travellingDistance.sln /t:Clean,Rebuild /p:Configuration=Debug /p:Platform=x64
+        - name: compile 
+          run:  msbuild travellingDistance.sln /t:Clean,Rebuild /p:Configuration=Debug /p:Platform=x64
 
-    - name: test 
-      run:  vstest.console.exe bin\travellingDistance.dll /Platform:x64 /Logger:trx
+        - name: test 
+          run:  vstest.console.exe bin\travellingDistance.dll /Platform:x64 /Logger:trx
 
