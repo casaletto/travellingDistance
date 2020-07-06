@@ -1,0 +1,19 @@
+name: githib cb
+
+on: [push]
+
+jobs:
+
+  build:
+    runs-on: windows-latest
+
+    steps:
+    - name: msbuild
+      uses: microsoft/setup-msbuild
+
+    - name: checkout 
+      uses: actions/checkout
+
+    - name: compile 
+      run: msbuild travellingDistance.sln "/t:Clean,Rebuild" "/p:Configuration=Debug" "/p:Platform=x64"
+
