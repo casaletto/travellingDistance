@@ -12,13 +12,16 @@ jobs:
 
     - name: environment 
       run:  msbuild build.proj /t:Environment
+      shell: cmd 
 
     - name: info 
       run:  msbuild build.proj /t:BuildInfo
+      shell: cmd 
 
     - name: checkout 
       uses: actions/checkout@master 
 
     - name: compile 
       run:  msbuild travellingDistance.sln /t:Clean,Rebuild /p:Configuration=Debug /p:Platform=x64
+      shell: cmd 
 
