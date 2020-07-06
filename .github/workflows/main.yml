@@ -10,6 +10,9 @@ jobs:
     - name: msbuild
       uses: microsoft/setup-msbuild@v1.0.0
 
+    - name: pwd 
+      run:  pwd
+
     - name: environment 
       run:  msbuild build.proj /t:Environment
       shell: cmd 
