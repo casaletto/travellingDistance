@@ -30,6 +30,6 @@
   <ItemGroup>
     <None Include="README.md" />
     <None Include=".editorconfig" />
-    <None Include=".gitactions\workflows\main.yaml" />
+    <None Include=".github\workflows\main.yml" />
   </ItemGroup>
 </Project>

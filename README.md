@@ -1,6 +1,9 @@
 # travellingDistance
 
 
+![](https://github.com/casaletto/travellingDistance/workflows/.github/workflows/main.yml/badge.svg)
+
+
 John and Mary want to travel between a few towns A, B, C ... 
 
 Mary has on a sheet of paper a list of distances between these towns. 
