@@ -8,24 +8,24 @@ jobs:
 
     steps:
     - name: msbuild setup
-        uses: microsoft/setup-msbuild@v1.0.0
+      uses: microsoft/setup-msbuild@v1.0.0
 
     - name: vstest setup
-        uses: darenm/Setup-VSTest@v1
+      uses: darenm/Setup-VSTest@v1
 
     - name: checkout 
-        uses: actions/checkout@master 
+      uses: actions/checkout@master 
 
     - name: env
-        run:  set
-        shell: cmd
+      run:  set
+      shell: cmd
 
     - name: dir
-        run:  get-childitem
+      run:  get-childitem
 
     - name: compile 
-        run:  msbuild travellingDistance.sln /t:Clean,Rebuild /p:Configuration=Debug /p:Platform=x64
+      run:  msbuild travellingDistance.sln /t:Clean,Rebuild /p:Configuration=Debug /p:Platform=x64
 
     - name: test 
-        run:  vstest.console.exe bin\travellingDistance.dll /Platform:x64 /Logger:trx
+      run:  vstest.console.exe bin\travellingDistance.dll /Platform:x64 /Logger:trx
 
